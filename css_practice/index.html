@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevConnect</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #d9f6e7;
+      color: #17251f;
+      min-height: 100vh;
+    }
+
+    /* Top navigation */
+    .navbar {
+      height: 70px;
+      background: #252a28;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 42px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .search {
+      width: 220px;
+      padding: 9px 14px;
+      border: 1px solid #5c6560;
+      border-radius: 20px;
+      background: #333936;
+      color: white;
+      outline: none;
+    }
+
+    .search::placeholder {
+      color: #b9c0bd;
+    }
+
+    .profile {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #8dd6b2;
+      color: #173428;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    /* Main feed */
+    .feed {
+      width: 100%;
+      max-width: 680px;
+      margin: 42px auto 100px;
+      padding: 0 20px;
+    }
+
+    .post {
+      position: relative;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid #c7dfd2;
+      border-radius: 9px;
+      padding: 26px 20px 22px;
+      margin-bottom: 38px;
+      box-shadow: 0 3px 8px rgba(32, 66, 51, 0.08);
+    }
+
+    .badge {
+      position: absolute;
+      right: 14px;
+      top: -12px;
+      padding: 7px 12px;
+      border-radius: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #bce9d4;
+      color: #28634a;
+      border: 1px solid #12472d;
+    }
+
+    .badge.training {
+      background: #ead9ad;
+      color: #685225;
+      border-color: #926f16;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .author {
+      font-weight: 700;
+      color: #2c18e2;
+    }
+
+    .handle,
+    .time {
+      color: #727976;
+    }
+
+    .dot {
+      color: #8a9691;
+    }
+
+    .post-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #35433d;
+    }
+
+    .post-text .highlight {
+      color: #25885f;
+      font-weight: 600;
+    }
+
+    /* Floating button */
+    .new-post {
+      position: fixed;
+      right: 25px;
+      bottom: 24px;
+      border: none;
+      border-radius: 24px;
+      padding: 13px 22px;
+      background: #438fca;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(35, 75, 101, 0.25);
+    }
+
+    .new-post:hover {
+      background: #327eb9;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 0 18px;
+      }
+
+      .search {
+        width: 130px;
+      }
+
+      .feed {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">DevConnect</div>
+
+    <div class="nav-right">
+      <input class="search" type="text" placeholder="Search...">
+      <div class="profile">S</div>
+    </div>
+  </nav>
+
+  <main class="feed">
+
+    <article class="post">
+      <span class="badge">Verified Author</span>
+
+      <div class="post-header">
+        <span class="author">Alex Rivera</span>
+        <span class="handle">@alex_tech</span>
+        <span class="dot">•</span>
+        <span class="time">2h ago</span>
+      </div>
+
+      <p class="post-text">
+        Just deployed our <span class="highlight">Node.js</span> microservice to production.
+        Latency dropped by <strong>40%</strong> using Redis caching! 🚀
+      </p>
+    </article>
+
+    <article class="post">
+      <span class="badge training">Training</span>
+
+      <div class="post-header">
+        <span class="author">Tech Careers India</span>
+        <span class="handle">@tech_jobs</span>
+        <span class="dot">•</span>
+        <span class="time">5h ago</span>
+      </div>
+
+      <p class="post-text">
+        Top tech firms <span class="highlight">and startups</span> are looking for
+        <strong>2026</strong> grads. System Design, AI integration, and core CS layout
+        currently.
+      </p>
+    </article>
+
+    <article class="post">
+      <div class="post-header">
+        <span class="author">Frontend Daily</span>
+        <span class="handle">@frontend_io</span>
+        <span class="dot">•</span>
+        <span class="time">1d ago</span>
+      </div>
+
+      <p class="post-text">
+        Remember: <span class="highlight">practice algorithmic logic</span> for the
+        nearest panel. Let problem solving become a habit. If it doesn't find one,
+        it makes to be repeated.
+      </p>
+    </article>
+
+  </main>
+
+  <button class="new-post" onclick="createPost()">New Post</button>
+
+  <script>
+    function createPost() {
+      alert("New post button clicked!");
+    }
+  </script>
+
+</body>
+</html>
